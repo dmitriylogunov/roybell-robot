@@ -1,12 +1,12 @@
 import Entity, { ControlOptions } from "./entity";
 
-type DirectionOptions = "UP" | "DOWN" | "LEFT" | "RIGHT";
+export type RobotDirectionOptions = "UP" | "DOWN" | "LEFT" | "RIGHT";
 
 // Robot class extending Entity
 class Robot extends Entity {
-    public direction: DirectionOptions;
+    public direction: RobotDirectionOptions;
 
-    constructor(x: number, y: number, direction: DirectionOptions) {
+    constructor(x: number, y: number, direction: RobotDirectionOptions) {
         super(x, y);
         this.direction = direction;
     }

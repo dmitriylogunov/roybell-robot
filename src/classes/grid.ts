@@ -5,18 +5,17 @@ class Grid {
     sizeY: number;
     private data: (Entity | null)[][];
     
-
     constructor(sizeX: number, sizeY: number, entity: Entity) {
         this.sizeX = sizeX;
         this.sizeY = sizeY;
         
-        const newGridData: any[][] = Array.from({ length: this.sizeX }, () => Array(this.sizeY).fill(null));
+        const newGridData: (Entity | null)[][] = Array.from({ length: this.sizeX }, () => Array(this.sizeY).fill(null));
         newGridData[entity.x][entity.y] = entity;
 
         this.data = newGridData;
     }
 
-    public getData(): any[][] {
+    public getData(): (Entity | null)[][] {
         return this.data;
     }
 

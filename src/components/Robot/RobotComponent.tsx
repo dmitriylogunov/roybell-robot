@@ -1,27 +1,31 @@
-import React from 'react';
-import './RobotComponent.css';
-import Robot, { RobotDirectionOptions } from '../../classes/robot';
+import React from "react";
+import "./RobotComponent.css";
+import Robot, { RobotDirectionOptions } from "../../classes/robot";
 
-const RobotComponent: React.FC<{ robot: Robot }> = ({ robot }) => {
+interface RobotProps {
+  robot: Robot;
+}
+
+const RobotComponent: React.FC<RobotProps> = ({ robot }) => {
   const getRotationAngle = (direction: RobotDirectionOptions) => {
     switch (direction) {
-      case 'UP':
-        return '0deg';
-      case 'RIGHT':
-        return '90deg';
-      case 'DOWN':
-        return '180deg';
-      case 'LEFT':
-        return '270deg';
+      case "UP":
+        return "90deg";
+      case "RIGHT":
+        return "0deg";
+      case "DOWN":
+        return "260deg";
+      case "LEFT":
+        return "0deg";
     }
   };
 
   const getFlip = (direction: RobotDirectionOptions) => {
     switch (direction) {
-      case 'LEFT':
-        return '-1'; // Flip horizontally
+      case "RIGHT":
+        return "-1"; // Flip horizontally
       default:
-        return '1'; // No flip
+        return "1"; // No flip
     }
   };
 
@@ -29,7 +33,10 @@ const RobotComponent: React.FC<{ robot: Robot }> = ({ robot }) => {
   const flip = getFlip(robot.direction);
 
   return (
-    <div className="robot-image" style={{ transform: `rotate(${rotationAngle}) scaleX(${flip})` }}></div>
+    <div
+      className="robot-image"
+      style={{ transform: `rotate(${rotationAngle}) scaleX(${flip})` }}
+    ></div>
   );
 };
 

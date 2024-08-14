@@ -1,0 +1,13 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    gap: 1px;
+    width: 50%; /* Fill the whole width */
+    background-color: black;
+    border: 1px solid; /* Add border around the entire grid */
+}
+
+.grid > * {
+    aspect-ratio: 1 / 1; /* Ensure cells are square */
+    background-color: white;
+}

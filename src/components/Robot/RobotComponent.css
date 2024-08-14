@@ -1,8 +1,38 @@
 .robot-image {
-    width: 100px;
-    height: 100px; 
-    background-image: url('../../assets/robot.png');
-    background-size: 60%;
-    background-position: center;
-    background-repeat: no-repeat;
+  width: 100px;
+  height: 100px; 
+  background-image: url('../../assets/robot.png');
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: fall 0.5s ease-in forwards, bounce 0.5s 0.5s ease-out; /* Add bounce animation */
+}
+
+@keyframes fall {
+  0% {
+      transform: translateY(-100px) scale(1.5) skewY(-10deg); /* Start above the container, larger size, skewed */
+      opacity: 0; /* Start invisible */
   }
+  100% {
+      transform: translateY(0) scale(1) skewY(0deg); /* End at the original position, normal size, no skew */
+      opacity: 1; /* End fully visible */
+  }
+}
+
+@keyframes bounce {
+  0% {
+      transform: translateY(0) scale(1) skewY(0deg); /* Start at the original position */
+  }
+  30% {
+      transform: translateY(-10px) scale(1.1) skewY(-5deg); /* Bounce up with isometric effect */
+  }
+  50% {
+      transform: translateY(0) scale(1) skewY(0deg); /* Return to original position */
+  }
+  70% {
+      transform: translateY(-5px) scale(1.05) skewY(-2.5deg); /* Smaller bounce up with isometric effect */
+  }
+  100% {
+      transform: translateY(0) scale(1) skewY(0deg); /* Return to original position */
+  }
+}

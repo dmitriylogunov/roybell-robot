@@ -1,3 +1,17 @@
+# Coding assessment
+
+Create a Javascript application in which you can simulate controlling a robot. The robot should be placed on a 5x5 grid. Supply controls that let you move the robot forwards in the direction it is facing, and rotate the robot in place to face any cardinal direction. Use any Javascript framework you’re comfortable with, as long as it runs in modern web browsers (we’re not looking for backwards compatibility in this test). Take a look around bellroy.com and use what you see to give your application a Bellroy “look”.
+
+# Available scripts
+
+`npm run dev`
+
+`npm run build`
+
+`npm run test`
+
+`npm run test:ui`
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -18,11 +32,11 @@ export default tseslint.config({
   languageOptions: {
     // other options...
     parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
       tsconfigRootDir: import.meta.dirname,
     },
   },
-})
+});
 ```
 
 - Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
@@ -31,11 +45,11 @@ export default tseslint.config({
 
 ```js
 // eslint.config.js
-import react from 'eslint-plugin-react'
+import react from "eslint-plugin-react";
 
 export default tseslint.config({
   // Set the react version
-  settings: { react: { version: '18.3' } },
+  settings: { react: { version: "18.3" } },
   plugins: {
     // Add the react plugin
     react,
@@ -44,7 +58,7 @@ export default tseslint.config({
     // other rules...
     // Enable its recommended rules
     ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
+    ...react.configs["jsx-runtime"].rules,
   },
-})
+});
 ```

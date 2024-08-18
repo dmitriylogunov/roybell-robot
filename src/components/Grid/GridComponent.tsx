@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import Grid from "../../classes/grid";
 import RobotComponent from "../Robot/RobotComponent";
 import Robot from "../../classes/robot";
-import "./GridComponent.css";
+import "./GridComponent.scss";
 
 const GridComponent: React.FC<{}> = () => {
   const robot = useMemo(() => new Robot(2, 2, "LEFT"), []);

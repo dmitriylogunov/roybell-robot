@@ -1,3 +1,5 @@
+@import './bellroy.css';
+
 /* General styles */
 #root {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -44,8 +46,18 @@
       margin-right: 20px;
     }
 
-    .grid {
+    .grid-wrapper {
       flex: 1 0 80%;
+      padding: 10px;
+      background-color: #ddd; /* Darker background */
+      border-radius: 10px; /* Rounded corners */
+
+      .grid {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ccc; /* Straight border */
+        border-radius: 0; /* Straight corners */
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import "./GridComponent.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";

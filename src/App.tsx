@@ -13,7 +13,9 @@ function App() {
       <div className="content">
         <div className="controls-grid-container">
           <ControlsComponent />
-          <GridComponent />
+          <div className="grid-wrapper">
+            <GridComponent />
+          </div>
         </div>
       </div>
       <div className="footer"></div>

@@ -16,18 +16,22 @@ const ControlsComponent: React.FC = () => {
       switch (event.key) {
         case "a":
         case "A":
+        case "ArrowLeft":
           handleCommand("LEFT");
           break;
         case "d":
         case "D":
+        case "ArrowRight":
           handleCommand("RIGHT");
           break;
         case "w":
         case "W":
+        case "ArrowUp":
           handleCommand("FORWARD");
           break;
         case "s":
         case "S":
+        case "ArrowDown":
           handleCommand("BACK");
           break;
         default:
@@ -45,17 +49,37 @@ const ControlsComponent: React.FC = () => {
     <div className="controls">
       <div>&nbsp;</div>
       <div>
-        <button onClick={() => handleCommand("FORWARD")}>W</button>
+        <button
+          className={"br_text-sm-sans-bold-spaced"}
+          onClick={() => handleCommand("FORWARD")}
+        >
+          W
+        </button>
       </div>
       <div>&nbsp;</div>
       <div>
-        <button onClick={() => handleCommand("LEFT")}>A</button>
+        <button
+          className={"br_text-sm-sans-bold-spaced"}
+          onClick={() => handleCommand("LEFT")}
+        >
+          A
+        </button>
       </div>
       <div>
-        <button onClick={() => handleCommand("BACK")}>S</button>
+        <button
+          className={"br_text-sm-sans-bold-spaced"}
+          onClick={() => handleCommand("BACK")}
+        >
+          S
+        </button>
       </div>
       <div>
-        <button onClick={() => handleCommand("RIGHT")}>D</button>
+        <button
+          className={"br_text-sm-sans-bold-spaced"}
+          onClick={() => handleCommand("RIGHT")}
+        >
+          D
+        </button>
       </div>
     </div>
   );

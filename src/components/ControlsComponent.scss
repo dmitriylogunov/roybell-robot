@@ -15,15 +15,16 @@
             width: 70px;
             height: 70px;
             font-size: 1.5rem;
-            border: 1px solid #ccc;
+            border: 1px solid rgb(225, 90, 29);
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            background-color: #f9f9f9;
+            background-color: #fff; /* White background */
+            color: rgb(225, 90, 29); /* Text color */
             cursor: pointer;
             transition: background-color 0.3s, box-shadow 0.3s;
 
             :active {
-                background-color: #e0e0e0;
+                background-color: rgba(225, 90, 29, 0.1); /* Slightly tinted background */
                 box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
             }
         }

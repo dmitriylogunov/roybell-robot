@@ -1,4 +1,5 @@
 import "./App.scss";
+import { Analytics } from "@vercel/analytics/react";
 import ControlsComponent from "./components/ControlsComponent";
 import GridComponent from "./components/GridComponent";
 
@@ -19,6 +20,7 @@ function App() {
         </div>
       </div>
       <div className="footer"></div>
+      <Analytics />
     </>
   );
 }

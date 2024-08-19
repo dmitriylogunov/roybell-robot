@@ -6,6 +6,8 @@ NB: In order to give an application a "Bellroy" look, a bellroy.css file from be
 
 NB2: There is no support for the mobile devices
 
+NB3: This app would benefit from a few unit tests. Vitest and Jest are installed, and npm test script is set up, but there are no tests yet.
+
 # Available scripts
 
 `npm run dev`

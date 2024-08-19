@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { RobotCommands } from "../models/Robot";
 import { useDispatch } from "react-redux";
 import { moveRobot } from "../redux/robotSlice";
+import "./ControlsComponent.scss";
 
 const ControlsComponent: React.FC = () => {
   const dispatch = useDispatch();
@@ -42,10 +43,20 @@ const ControlsComponent: React.FC = () => {
   }, []);
   return (
     <div className="controls">
-      <button onClick={() => handleCommand("LEFT")}>Turn Left</button>
-      <button onClick={() => handleCommand("RIGHT")}>Turn Right</button>
-      <button onClick={() => handleCommand("FORWARD")}>Move Forward</button>
-      <button onClick={() => handleCommand("BACK")}>Move Backward</button>
+      <div>&nbsp;</div>
+      <div>
+        <button onClick={() => handleCommand("FORWARD")}>W</button>
+      </div>
+      <div>&nbsp;</div>
+      <div>
+        <button onClick={() => handleCommand("LEFT")}>A</button>
+      </div>
+      <div>
+        <button onClick={() => handleCommand("BACK")}>S</button>
+      </div>
+      <div>
+        <button onClick={() => handleCommand("RIGHT")}>D</button>
+      </div>
     </div>
   );
 };

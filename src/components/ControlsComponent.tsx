@@ -15,7 +15,7 @@ const ControlsComponent: React.FC = () => {
       <button onClick={() => handleCommand("LEFT")}>Turn Left</button>
       <button onClick={() => handleCommand("RIGHT")}>Turn Right</button>
       <button onClick={() => handleCommand("FORWARD")}>Move Forward</button>
-      <button onClick={() => handleCommand("BACKWARD")}>Move Backward</button>
+      <button onClick={() => handleCommand("BACK")}>Move Backward</button>
     </div>
   );
 };

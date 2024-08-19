@@ -9,7 +9,10 @@ const GridComponent: React.FC<{}> = () => {
   const robot = useSelector((state: RootState) => state.robot);
 
   return (
-    <div className="grid br_border-grey-200">
+    <div
+      className="grid br_border-grey-200"
+      style={{ gridTemplateColumns: `repeat(${GRID_SIZE}, 1fr)` }}
+    >
       <RobotOverlayComponent robot={robot} />
       {Array.from({ length: GRID_SIZE }).map((_, rowIndex) =>
         Array.from({ length: GRID_SIZE }).map((_, columnIndex) => (

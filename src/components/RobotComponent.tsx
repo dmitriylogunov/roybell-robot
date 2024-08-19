@@ -1,42 +1,20 @@
 import React from "react";
 import "./RobotComponent.scss";
-import Robot, { RobotDirectionOptions } from "../models/Robot";
+import Robot from "../models/Robot";
 
 interface RobotProps {
   robot: Robot;
 }
 
 const RobotComponent: React.FC<RobotProps> = ({ robot }) => {
-  const getRotationAngle = (direction: RobotDirectionOptions) => {
-    switch (direction) {
-      case "UP":
-        return "90deg";
-      case "RIGHT":
-        return "0deg";
-      case "DOWN":
-        return "260deg";
-      case "LEFT":
-        return "0deg";
-    }
+  const rotationStyle = {
+    transform: `rotate(${robot.angle}deg)`,
   };
-
-  const getFlip = (direction: RobotDirectionOptions) => {
-    switch (direction) {
-      case "RIGHT":
-        return "-1"; // Flip horizontally
-      default:
-        return "1"; // No flip
-    }
-  };
-
-  const rotationAngle = getRotationAngle(robot.direction);
-  const flip = getFlip(robot.direction);
 
   return (
-    <div
-      className="robot-image"
-      style={{ transform: `rotate(${rotationAngle}) scaleX(${flip})` }}
-    ></div>
+    <div className="robot" style={rotationStyle}>
+      <div className="robot-image"></div>
+    </div>
   );
 };
 

@@ -11,7 +11,12 @@ interface RobotOverlayComponentProps {
 const RobotOverlayComponent: React.FC<RobotOverlayComponentProps> = ({
   robot,
 }) => {
-  const [position, setPosition] = useState({ top: 0, left: 0 });
+  const [position, setPosition] = useState({
+    top: 0,
+    left: 0,
+    width: 100,
+    height: 100,
+  });
 
   useEffect(() => {
     const parentElement =
@@ -19,9 +24,11 @@ const RobotOverlayComponent: React.FC<RobotOverlayComponentProps> = ({
     if (parentElement) {
       const parentHeight = parentElement.clientHeight;
       const parentWidth = parentElement.clientWidth;
+      const width = (parentWidth / GRID_SIZE) | 0;
+      const height = (parentHeight / GRID_SIZE) | 0;
       const top = (robot.yCoordinate * parentHeight) / GRID_SIZE;
       const left = (robot.xCoordinate * parentWidth) / GRID_SIZE;
-      setPosition({ top, left });
+      setPosition({ top, left, width, height });
     }
   }, [robot.xCoordinate, robot.yCoordinate]);
 
@@ -33,6 +40,8 @@ const RobotOverlayComponent: React.FC<RobotOverlayComponentProps> = ({
           position: "absolute",
           top: `${position.top}px`,
           left: `${position.left}px`,
+          width: `${position.width}px`,
+          height: `${position.height}px`,
         }}
       >
         <RobotComponent robot={robot} />

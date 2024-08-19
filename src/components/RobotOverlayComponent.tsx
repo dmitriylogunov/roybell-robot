@@ -28,6 +28,7 @@ const RobotOverlayComponent: React.FC<RobotOverlayComponentProps> = ({
       const height = (parentHeight / GRID_SIZE) | 0;
       const top = (robot.yCoordinate * parentHeight) / GRID_SIZE;
       const left = (robot.xCoordinate * parentWidth) / GRID_SIZE;
+
       setPosition({ top, left, width, height });
     }
   }, [robot.xCoordinate, robot.yCoordinate]);

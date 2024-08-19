@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import ControlsComponent from "./components/ControlsComponent";
 import GridComponent from "./components/GridComponent";
 
@@ -11,10 +11,11 @@ function App() {
     <>
       <div className="header"></div>
       <div className="content">
-        <ControlsComponent />
-        <GridComponent />
+        <div className="controls-grid-container">
+          <ControlsComponent />
+          <GridComponent />
+        </div>
       </div>
-      <div className="legend"></div>
       <div className="footer"></div>
     </>
   );

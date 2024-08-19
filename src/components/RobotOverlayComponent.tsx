@@ -8,15 +8,12 @@ interface RobotOverlayComponentProps {
   robot: Robot;
 }
 
+type Dimensions = { top: number; left: number; width: number; height: number };
+
 const RobotOverlayComponent: React.FC<RobotOverlayComponentProps> = ({
   robot,
 }) => {
-  const [position, setPosition] = useState({
-    top: 0,
-    left: 0,
-    width: 100,
-    height: 100,
-  });
+  const [position, setPosition] = useState<Dimensions | null>(null);
 
   useEffect(() => {
     const parentElement =
@@ -35,18 +32,20 @@ const RobotOverlayComponent: React.FC<RobotOverlayComponentProps> = ({
 
   return (
     <div className="robot-overlay">
-      <div
-        className="robot_wrapper"
-        style={{
-          position: "absolute",
-          top: `${position.top}px`,
-          left: `${position.left}px`,
-          width: `${position.width}px`,
-          height: `${position.height}px`,
-        }}
-      >
-        <RobotComponent robot={robot} />
-      </div>
+      {position && (
+        <div
+          className="robot_wrapper"
+          style={{
+            position: "absolute",
+            top: `${position.top}px`,
+            left: `${position.left}px`,
+            width: `${position.width}px`,
+            height: `${position.height}px`,
+          }}
+        >
+          <RobotComponent robot={robot} />
+        </div>
+      )}
     </div>
   );
 };

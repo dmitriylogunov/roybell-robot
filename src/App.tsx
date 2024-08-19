@@ -1,11 +1,13 @@
 import "./App.css";
-import GridComponent from "./components/Grid/GridComponent";
+import ControlsComponent from "./components/ControlsComponent";
+import GridComponent from "./components/GridComponent";
 
 function App() {
   return (
     <>
       <div className="header"></div>
       <div className="content">
+        <ControlsComponent />
         <GridComponent />
       </div>
       <div className="legend"></div>

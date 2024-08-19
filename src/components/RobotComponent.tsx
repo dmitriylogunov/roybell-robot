@@ -1,6 +1,6 @@
 import React from "react";
-import "./RobotComponent.css";
-import Robot, { RobotDirectionOptions } from "../../classes/robot";
+import "./RobotComponent.scss";
+import Robot, { RobotDirectionOptions } from "../models/Robot";
 
 interface RobotProps {
   robot: Robot;
